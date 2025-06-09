@@ -1,10 +1,13 @@
 import { Navbar } from "react-bootstrap"
+import UserCard from "./components/UserCard"
 
 function App() {
 
   return (
     <div>
-      <p>My name is Muskan Sharma</p>
+      <UserCard/>
+      <UserCard/>
+      <UserCard/>
     </div>
   )
 }
