@@ -7,7 +7,7 @@ const UserCard = () => {
     <div className='user-container'>
         <p id='user-name'>Muskan Sharma</p>
         <img id='user-img' src={mypic} alt="Muskan" />
-        <p id='user-desc'>CSE Student</p>
+        <p id='user-desc'>BTech CSE Student</p>
     </div>
   )
 }
