@@ -7,7 +7,7 @@ const UserCard = (props) => {
     <div className='user-container'>
         <p id='user-name'>{props.name}</p>
         <img id='user-img' src={mypic} alt="Muskan" />
-        <p id='user-desc'>BTech CSE Student</p>
+        <p id='user-desc'>{props.desc}</p>
     </div>
   )
 }
