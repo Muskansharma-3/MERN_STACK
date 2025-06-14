@@ -4,6 +4,9 @@ import UseState from './components/UseState'
 import Card from './components/Card'
 import Button from './components/Button'
 import StateLifting from './components/StateLifting'
+import Logout from './components/Logout'
+import Login from './components/Login'
+import { IoLanguage } from 'react-icons/io5'
 
 
 function App() {
@@ -13,10 +16,40 @@ function App() {
     
   // }
 
-  const[name, setName] = useState('');
+  // const[name, setName] = useState('');
+  const[isLoggedIn, setIsLoggedIn] = useState(false);
 
-  return (
-    <div className="container">
+  if(!isLoggedIn){
+    return(
+      <Login/>
+    )
+  }
+  return(
+    <div>
+      <h1>Welcome everyone!</h1>
+      <div>
+        {isLoggedIn && <Logout/>}
+        {/* {!isLoggedIn && <Login/>} */}
+      
+      </div>
+    </div>
+    // <div>
+    //   {isLoggedIn ? <Logout/> : <Login/>}
+    // </div>
+  )
+
+  // if(isLoggedIn){
+  //   return(
+  //     <Logout/>
+  //   )
+  // }else{
+  //   return(
+  //     <Login/>
+  //   )
+  // }
+
+  // return (
+  //   <div className="container">
       {/* <UserCard name="Muskan Sharma" desc="desc1" />
       <UserCard name="Shaweta Sharma" desc="desc2"/>
       <UserCard name="Kanvi Sharma" desc="desc3"/> */}
@@ -31,11 +64,11 @@ function App() {
 
       {/* <UseState/> */}
 
-      <StateLifting title="Card1" name={name} setName={setName}/>
-      <StateLifting title="Card2" name={name} setName={setName}/>
+      // <StateLifting title="Card1" name={name} setName={setName}/>
+      // <StateLifting title="Card2" name={name} setName={setName}/>
       {/* <p>I am inside parent component and the value of name is {name}</p> */}
-    </div>
-  )
+  //   </div>
+  // )
 }
 
 export default App
