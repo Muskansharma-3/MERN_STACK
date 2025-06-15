@@ -8,11 +8,12 @@ import Logout from './components/Logout'
 import Login from './components/Login'
 import { IoLanguage } from 'react-icons/io5'
 import { div } from 'framer-motion/client'
+import LoggerComponent from './components/LoggerComponent'
 
 
 function App() {
-  const [count, setCount] = useState(0);
-  const [total, setTotal] = useState(1);
+  // const [count, setCount] = useState(0);
+  // const [total, setTotal] = useState(1);
   // useEffect
   // first -> side effect function and runs when the component mounts
   // second -> cleanup function and runs when the component unmounts
@@ -34,24 +35,36 @@ function App() {
   // },[count])
 
   // variation 4: multiple dependencies
-  useEffect(()=>{
-    alert("I will run every time when count or total is updated!")
-  }, [count, total])
+  // useEffect(()=>{
+  //   alert("I will run every time when count or total is updated!")
+  // }, [count, total])
 
-  function handleCount(){
-    setCount(count + 1);
-  }
-  function handleTotal(){
-    setTotal(total + 1);
-  }
+  // variation 5: cleanup function
+  // useEffect(() => {
+  //   alert("Count is updated!")
+  //   return () => {
+  //     alert("Count is unmounted from UI")
+  //   }
+  // }, [count])
+  
+
+
+  // function handleCount(){
+  //   setCount(count + 1);
+  // }
+  // function handleTotal(){
+  //   setTotal(total + 1);
+  // }
 
   return(
     <div>
-      <button onClick={handleCount}>Update Count</button>
+      <LoggerComponent/>
+
+      {/* <button onClick={handleCount}>Update Count</button>
       <p>Count is: {count}</p>
       <br />
       <button onClick={handleTotal}>Update Total</button>
-      <p>Total is: {total}</p>
+      <p>Total is: {total}</p> */}
     </div>
   )
   
