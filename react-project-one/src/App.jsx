@@ -12,6 +12,7 @@ import { div } from 'framer-motion/client'
 
 function App() {
   const [count, setCount] = useState(0);
+  const [total, setTotal] = useState(1);
   // useEffect
   // first -> side effect function and runs when the component mounts
   // second -> cleanup function and runs when the component unmounts
@@ -23,18 +24,34 @@ function App() {
   // })
 
   // variation 2: that runs on only first render
-  useEffect(()=>{
-    alert("I will run only on first render!");
-  },[])
+  // useEffect(()=>{
+  //   alert("I will run only on first render!");
+  // },[])
 
-  function handleClick(){
+  // variation 3: that runs when count changes
+  // useEffect(()=>{
+  //   alert("I will run every time when count is updated!")
+  // },[count])
+
+  // variation 4: multiple dependencies
+  useEffect(()=>{
+    alert("I will run every time when count or total is updated!")
+  }, [count, total])
+
+  function handleCount(){
     setCount(count + 1);
+  }
+  function handleTotal(){
+    setTotal(total + 1);
   }
 
   return(
     <div>
-      <button onClick={handleClick}>Click me</button>
+      <button onClick={handleCount}>Update Count</button>
       <p>Count is: {count}</p>
+      <br />
+      <button onClick={handleTotal}>Update Total</button>
+      <p>Total is: {total}</p>
     </div>
   )
   
