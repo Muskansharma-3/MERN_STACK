@@ -11,6 +11,7 @@ import { div } from 'framer-motion/client'
 import LoggerComponent from './components/LoggerComponent'
 import TimerComponent from './components/TimerComponent'
 import DataFetcher from './components/DataFetcher'
+import ResizeComponent from './components/ResizeComponent'
 
 
 function App() {
@@ -62,7 +63,8 @@ function App() {
     <div>
       {/* <LoggerComponent/> */}
       {/* <TimerComponent/> */}
-      <DataFetcher/>
+      {/* <DataFetcher/> */}
+      <ResizeComponent/>
 
       {/* <button onClick={handleCount}>Update Count</button>
       <p>Count is: {count}</p>
