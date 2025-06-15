@@ -10,6 +10,7 @@ import { IoLanguage } from 'react-icons/io5'
 import { div } from 'framer-motion/client'
 import LoggerComponent from './components/LoggerComponent'
 import TimerComponent from './components/TimerComponent'
+import DataFetcher from './components/DataFetcher'
 
 
 function App() {
@@ -61,6 +62,7 @@ function App() {
     <div>
       {/* <LoggerComponent/> */}
       {/* <TimerComponent/> */}
+      <DataFetcher/>
 
       {/* <button onClick={handleCount}>Update Count</button>
       <p>Count is: {count}</p>
