@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import UserCard from "./components/UserCard"
 import UseState from './components/UseState'
 import Card from './components/Card'
@@ -12,29 +12,43 @@ import { div } from 'framer-motion/client'
 
 function App() {
 
+  // useEffect
+  // first -> side effect function and runs when the component mounts
+  // second -> cleanup function and runs when the component unmounts
+  // third -> dependency array and runs when the component mounts and when the values in the array change
+  useEffect(() => {
+    first
+  
+    return () => {
+      second
+    }
+  }, [third])
+  
+
   // Event Handling
-  function handleClick(){
-    alert("I am clicked!");
-  }
+  // function handleClick(){
+  //   alert("I am clicked!");
+  // }
 
-  function handleMouseOver(){
-    alert("Paragraph hovered!");
-  }
+  // function handleMouseOver(){
+  //   alert("Paragraph hovered!");
+  // }
 
-  function handleInputChange(e){
-    // console.log("Input changed!");
-    console.log("Value till now: ", e.target.value);
-  }
+  // function handleInputChange(e){
+  //   // console.log("Input changed!");
+  //   console.log("Value till now: ", e.target.value);
+  // }
 
-  function handleSubmit(e){
-    e.preventDefault(); // Prevents the default form submission behavior
-    console.log("Form submitted!");
-  }
+  // function handleSubmit(e){
+  //   e.preventDefault(); // Prevents the default form submission behavior
+  //   console.log("Form submitted!");
+  // }
 
   return(
     <div>
 
-      <button onClick={()=>alert("I am clicked!")}>Click me</button>
+
+      {/* <button onClick={()=>alert("I am clicked!")}>Click me</button> */}
 
       {/* <form action="" onSubmit={handleSubmit}>
         <input type="text" onChange={handleInputChange} />
