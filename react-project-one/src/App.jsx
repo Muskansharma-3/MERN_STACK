@@ -11,18 +11,26 @@ import { div } from 'framer-motion/client'
 
 
 function App() {
-
+  const [count, setCount] = useState(0);
   // useEffect
   // first -> side effect function and runs when the component mounts
   // second -> cleanup function and runs when the component unmounts
   // third -> dependency array and runs when the component mounts and when the values in the array change
+
+  // variation1: runs on every render
   useEffect(() => {
-    first
-  
-    return () => {
-      second
-    }
-  }, [third])
+    alert("I will run on each render!");
+  })
+
+  function handleClick(){
+    setCount(count + 1);
+  }
+
+  return(
+    <div>
+      <button onClick={handleClick}>Click me</button>
+    </div>
+  )
   
 
   // Event Handling
@@ -44,8 +52,8 @@ function App() {
   //   console.log("Form submitted!");
   // }
 
-  return(
-    <div>
+  // return(
+  //   <div>
 
 
       {/* <button onClick={()=>alert("I am clicked!")}>Click me</button> */}
@@ -56,8 +64,8 @@ function App() {
       </form>
       <p onMouseOver={handleMouseOver} style={{border:"1px solid black"}}>I am a para</p>
       <button onClick={handleClick}>Click me</button> */}
-    </div>
-  )
+    //div>
+  // )
 
   // const [count, setCount]=useState(0);
   // function handleClick(){
