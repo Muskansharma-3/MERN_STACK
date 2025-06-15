@@ -7,9 +7,35 @@ import StateLifting from './components/StateLifting'
 import Logout from './components/Logout'
 import Login from './components/Login'
 import { IoLanguage } from 'react-icons/io5'
+import { div } from 'framer-motion/client'
 
 
 function App() {
+
+  // Event Handling
+  function handleClick(){
+    alert("I am clicked!");
+  }
+
+  function handleMouseOver(){
+    alert("Paragraph hovered!");
+  }
+
+  function handleInputChange(){
+    // console.log("Input changed!");
+    console.log("Value till now: ", event.target.value);
+  }
+
+  return(
+    <div>
+      <form action="">
+        <input type="text" onChange={(e)=>handleInputChange(e)} />
+      </form>
+      <p onMouseOver={handleMouseOver} style={{border:"1px solid black"}}>I am a para</p>
+      <button onClick={handleClick}>Click me</button>
+    </div>
+  )
+
   // const [count, setCount]=useState(0);
   // function handleClick(){
   //   setCount(count + 1);
@@ -17,26 +43,26 @@ function App() {
   // }
 
   // const[name, setName] = useState('');
-  const[isLoggedIn, setIsLoggedIn] = useState(false);
+  // const[isLoggedIn, setIsLoggedIn] = useState(false);
 
-  if(!isLoggedIn){
-    return(
-      <Login/>
-    )
-  }
-  return(
-    <div>
-      <h1>Welcome everyone!</h1>
-      <div>
-        {isLoggedIn && <Logout/>}
-        {/* {!isLoggedIn && <Login/>} */}
+  // if(!isLoggedIn){
+  //   return(
+  //     <Login/>
+  //   )
+  // }
+  // return(
+  //   <div>
+  //     <h1>Welcome everyone!</h1>
+  //     <div>
+  //       {isLoggedIn && <Logout/>}
+  //       {/* {!isLoggedIn && <Login/>} */}
       
-      </div>
-    </div>
+  //     </div>
+  //   </div>
     // <div>
     //   {isLoggedIn ? <Logout/> : <Login/>}
     // </div>
-  )
+  // )
 
   // if(isLoggedIn){
   //   return(
