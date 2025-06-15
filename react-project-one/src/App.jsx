@@ -12,6 +12,7 @@ import LoggerComponent from './components/LoggerComponent'
 import TimerComponent from './components/TimerComponent'
 import DataFetcher from './components/DataFetcher'
 import ResizeComponent from './components/ResizeComponent'
+import MultiEffectComponent from './components/MultiEffectComponent'
 
 
 function App() {
@@ -64,7 +65,8 @@ function App() {
       {/* <LoggerComponent/> */}
       {/* <TimerComponent/> */}
       {/* <DataFetcher/> */}
-      <ResizeComponent/>
+      {/* <ResizeComponent/> */}
+      <MultiEffectComponent/>
 
       {/* <button onClick={handleCount}>Update Count</button>
       <p>Count is: {count}</p>
