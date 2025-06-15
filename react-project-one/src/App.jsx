@@ -9,6 +9,7 @@ import Login from './components/Login'
 import { IoLanguage } from 'react-icons/io5'
 import { div } from 'framer-motion/client'
 import LoggerComponent from './components/LoggerComponent'
+import TimerComponent from './components/TimerComponent'
 
 
 function App() {
@@ -58,7 +59,8 @@ function App() {
 
   return(
     <div>
-      <LoggerComponent/>
+      {/* <LoggerComponent/> */}
+      {/* <TimerComponent/> */}
 
       {/* <button onClick={handleCount}>Update Count</button>
       <p>Count is: {count}</p>
