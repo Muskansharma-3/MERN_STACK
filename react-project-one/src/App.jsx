@@ -17,10 +17,15 @@ function App() {
   // second -> cleanup function and runs when the component unmounts
   // third -> dependency array and runs when the component mounts and when the values in the array change
 
-  // variation1: runs on every render
-  useEffect(() => {
-    alert("I will run on each render!");
-  })
+  // variation 1: runs on every render
+  // useEffect(() => {
+  //   alert("I will run on each render!");
+  // })
+
+  // variation 2: that runs on only first render
+  useEffect(()=>{
+    alert("I will run only on first render!");
+  },[])
 
   function handleClick(){
     setCount(count + 1);
@@ -29,6 +34,7 @@ function App() {
   return(
     <div>
       <button onClick={handleClick}>Click me</button>
+      <p>Count is: {count}</p>
     </div>
   )
   
