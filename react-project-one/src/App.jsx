@@ -21,15 +21,21 @@ function App() {
     alert("Paragraph hovered!");
   }
 
-  function handleInputChange(){
+  function handleInputChange(e){
     // console.log("Input changed!");
-    console.log("Value till now: ", event.target.value);
+    console.log("Value till now: ", e.target.value);
+  }
+
+  function handleSubmit(e){
+    e.preventDefault(); // Prevents the default form submission behavior
+    console.log("Form submitted!");
   }
 
   return(
     <div>
-      <form action="">
-        <input type="text" onChange={(e)=>handleInputChange(e)} />
+      <form action="" onSubmit={handleSubmit}>
+        <input type="text" onChange={handleInputChange} />
+        <button type='submit'>Submit</button>
       </form>
       <p onMouseOver={handleMouseOver} style={{border:"1px solid black"}}>I am a para</p>
       <button onClick={handleClick}>Click me</button>
