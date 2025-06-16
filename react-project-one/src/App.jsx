@@ -17,18 +17,25 @@ import ChildA from './components/ChildA'
 
 // make sure to export the UserContext so that it can be used in other components
 // step 1: create Context
-const UserContext=createContext();
+// const UserContext=createContext();
+
+const ThemeContext=createContext();
 
 // step 2: wrap all the child inside a provider.
 // step3 : pass value
 // step 4: consume the value in the child component using useContext hook
 function App() {
-  const [ user, setUser] = useState({name:"Muskan Sharma"});
+  const[theme, setTheme] =useState("light");
+  // const [ user, setUser] = useState({name:"Muskan Sharma"});
   return(
     <div>
-      <UserContext.Provider value={user}>
+      <ThemeContext.Provider value={theme}>
         <ChildA/>
-      </UserContext.Provider>
+      </ThemeContext.Provider>
+
+      {/* <UserContext.Provider value={user}>
+        <ChildA/>
+      </UserContext.Provider> */}
     </div>
   )
 
@@ -190,4 +197,5 @@ function App() {
 }
 
 export default App
-export { UserContext }; 
+// export { UserContext }; 
+export { ThemeContext }; 
