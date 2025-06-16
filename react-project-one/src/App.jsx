@@ -19,7 +19,7 @@ import './App.css';
 
 // make sure to export the UserContext so that it can be used in other components
 // step 1: create Context
-// const UserContext=createContext();
+const UserContext=createContext();
 
 const ThemeContext=createContext();
 
@@ -28,13 +28,16 @@ const ThemeContext=createContext();
 // step 4: consume the value in the child component using useContext hook
 function App() {
   const[theme, setTheme] =useState("light");
-  // const [ user, setUser] = useState({name:"Muskan Sharma"});
+  const [ user, setUser] = useState({name:"Muskan Sharma"});
   return(
+    <UserContext.Provider value={user}>
       <ThemeContext.Provider value={{theme, setTheme}}>
         <div id='container' style={{backgroundColor: theme==="light"?"beige":"black"}}>
           <ChildA/>
         </div>
       </ThemeContext.Provider>
+    </UserContext.Provider>
+      
 
       // {/* <UserContext.Provider value={user}>
       //   <ChildA/>
@@ -200,5 +203,5 @@ function App() {
 }
 
 export default App
-// export { UserContext }; 
+export { UserContext }; 
 export { ThemeContext }; 
