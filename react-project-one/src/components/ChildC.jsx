@@ -4,9 +4,12 @@ import { ThemeContext } from '../App'
 
 const ChildC = () => {
     const theme=useContext(ThemeContext);
+    function handleClick(){
+
+    }
   return (
     <div>
-        {theme}
+        <button onClick={handleClick}>Change Theme</button>
     </div>
   )
 }

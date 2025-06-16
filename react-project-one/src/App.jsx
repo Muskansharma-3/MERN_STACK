@@ -28,15 +28,16 @@ function App() {
   const[theme, setTheme] =useState("light");
   // const [ user, setUser] = useState({name:"Muskan Sharma"});
   return(
-    <div>
-      <ThemeContext.Provider value={theme}>
-        <ChildA/>
+      <ThemeContext.Provider value={{theme, setTheme}}>
+        <div id='container'>
+          <ChildA/>
+        </div>
       </ThemeContext.Provider>
 
-      {/* <UserContext.Provider value={user}>
-        <ChildA/>
-      </UserContext.Provider> */}
-    </div>
+      // {/* <UserContext.Provider value={user}>
+      //   <ChildA/>
+      // </UserContext.Provider> */}
+    
   )
 
 
