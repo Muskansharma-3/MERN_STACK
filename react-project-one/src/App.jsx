@@ -14,6 +14,8 @@ import DataFetcher from './components/DataFetcher'
 import ResizeComponent from './components/ResizeComponent'
 import MultiEffectComponent from './components/MultiEffectComponent'
 import ChildA from './components/ChildA'
+import './App.css';
+
 
 // make sure to export the UserContext so that it can be used in other components
 // step 1: create Context
@@ -29,7 +31,7 @@ function App() {
   // const [ user, setUser] = useState({name:"Muskan Sharma"});
   return(
       <ThemeContext.Provider value={{theme, setTheme}}>
-        <div id='container'>
+        <div id='container' style={{backgroundColor: theme==="light"?"beige":"black"}}>
           <ChildA/>
         </div>
       </ThemeContext.Provider>
