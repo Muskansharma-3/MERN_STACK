@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {createContext, useEffect, useState} from 'react'
 import UserCard from "./components/UserCard"
 import UseState from './components/UseState'
 import Card from './components/Card'
@@ -14,8 +14,16 @@ import DataFetcher from './components/DataFetcher'
 import ResizeComponent from './components/ResizeComponent'
 import MultiEffectComponent from './components/MultiEffectComponent'
 
-
+// create Context
+const UserContext=createContext();
 function App() {
+  return(
+    <div>
+
+    </div>
+  )
+
+
   // const [count, setCount] = useState(0);
   // const [total, setTotal] = useState(1);
   // useEffect
@@ -60,21 +68,21 @@ function App() {
   //   setTotal(total + 1);
   // }
 
-  return(
-    <div>
+  // return(
+  //   <div>
       {/* <LoggerComponent/> */}
       {/* <TimerComponent/> */}
       {/* <DataFetcher/> */}
       {/* <ResizeComponent/> */}
-      <MultiEffectComponent/>
+      {/* <MultiEffectComponent/> */}
 
       {/* <button onClick={handleCount}>Update Count</button>
       <p>Count is: {count}</p>
       <br />
       <button onClick={handleTotal}>Update Total</button>
       <p>Total is: {total}</p> */}
-    </div>
-  )
+    {/* </div>
+  ) */}
   
 
   // Event Handling
