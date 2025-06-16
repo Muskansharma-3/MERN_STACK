@@ -15,15 +15,18 @@ import ResizeComponent from './components/ResizeComponent'
 import MultiEffectComponent from './components/MultiEffectComponent'
 import ChildA from './components/ChildA'
 
+// make sure to export the UserContext so that it can be used in other components
 // step 1: create Context
 const UserContext=createContext();
 
 // step 2: wrap all the child inside a provider.
-
+// step3 : pass value
+// step 4: consume the value in the child component using useContext hook
 function App() {
+  const [ user, setUser] = useState({name:"Muskan Sharma"});
   return(
     <div>
-      <UserContext.Provider>
+      <UserContext.Provider value={user}>
         <ChildA/>
       </UserContext.Provider>
     </div>
@@ -187,3 +190,4 @@ function App() {
 }
 
 export default App
+export { UserContext }; 
