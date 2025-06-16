@@ -15,6 +15,7 @@ const ChildC = () => {
   return (
     <div>
         <button onClick={handleClick}>Change Theme</button>
+        <p>Data: {user.name}</p>
     </div>
   )
 }
