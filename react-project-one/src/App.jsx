@@ -13,13 +13,19 @@ import TimerComponent from './components/TimerComponent'
 import DataFetcher from './components/DataFetcher'
 import ResizeComponent from './components/ResizeComponent'
 import MultiEffectComponent from './components/MultiEffectComponent'
+import ChildA from './components/ChildA'
 
-// create Context
+// step 1: create Context
 const UserContext=createContext();
+
+// step 2: wrap all the child inside a provider.
+
 function App() {
   return(
     <div>
-
+      <UserContext.Provider>
+        <ChildA/>
+      </UserContext.Provider>
     </div>
   )
 
